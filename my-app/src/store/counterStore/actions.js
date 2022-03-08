@@ -1,12 +1,14 @@
 
-const increment = () => {
+export const increment = () => {
     return {
         type: 'counter/increment',
     }
 }
 
-const decrement = () => {
+export const decrement = () => {
     return {
         type: 'counter/decrement',
     }
 }
+
+//optimize with action types

@@ -1,25 +1,24 @@
-import './actions';
+// import './actions';
+import initialState from './state';
+import * as actionType from './actionTypes';
 
-const initialState = { value: 0 }
+function counterReducer( state=initialState,  action){
 
-function counterReducer( state=initialState, action){
-
-    if(action.type === 'counter/increment'){
+    if(action.type === actionType.INCREMENT){
         return{
             ...state,
-            value: state.value +1
+            value: state.value + 1
         }
     }
 
-    if(action.type === 'counter/decrement'){
+    if(action.type === actionType.DECREMENT){
         return {
             ...state,
             value: state.value -1 
         }
     }
 
-
-
+    console.log("Called");
     return state;
 }
 
