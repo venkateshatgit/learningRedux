@@ -1,13 +1,14 @@
+import * as actionType from './actionTypes';
 
 export const increment = () => {
     return {
-        type: 'counter/increment',
+        type: actionType.INCREMENT,
     }
 }
 
 export const decrement = () => {
     return {
-        type: 'counter/decrement',
+        type: actionType.DECREMENT,
     }
 }
 
