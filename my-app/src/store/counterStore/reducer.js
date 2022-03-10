@@ -1,25 +1,23 @@
-// import './actions';
-import initialState from './state';
-import * as actionType from './actionTypes';
+import { createSlice } from "@reduxjs/toolkit";
 
-function counterReducer( state=initialState,  action){
+export const counterReducer = createSlice({
+    name: 'counter',
+    initialState: {
+        value: 0,
+    },
+    reducers: {
 
-    if(action.type === actionType.INCREMENT){
-        return{
-            ...state,
-            value: state.value + 1
-        }
+        increment: (state) => {
+            state.value +=1
+        },
+
+        decrement: (state) => {
+            state.value -=1
+        },
+
+        
     }
+})
 
-    if(action.type === actionType.DECREMENT){
-        return {
-            ...state,
-            value: state.value -1 
-        }
-    }
-
-    console.log("Called");
-    return state;
-}
-
+export const { increment, decrement} = counterReducer.actions;
 export default counterReducer;
